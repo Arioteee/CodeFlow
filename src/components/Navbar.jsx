@@ -1,7 +1,7 @@
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
-const Navbar = () => {
+const Header = () => {
 	const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
 
 	return (
@@ -73,4 +73,4 @@ const Navbar = () => {
 	)
 }
 
-export default Navbar
+export default Header
