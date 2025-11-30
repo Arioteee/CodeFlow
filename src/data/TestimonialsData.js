@@ -5,7 +5,7 @@ import woman from '../../public/images/women.jpg'
 export const testimonials = [
 	{
 		name: 'Matthew But',
-		role: 'Senior Developer | Creator',
+		role: 'Senior Developer (feature) | Creator',
 		image: me,
 		content:
 			'This AI-powered development platform has revolutionized how we write code. The intelligent suggestions save us hours every day.',
