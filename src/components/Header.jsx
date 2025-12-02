@@ -6,7 +6,7 @@ const Header = ({ scrolled }) => {
 
 	return (
 		<header
-			className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+			className={`fixed top-0 w-full z-50 transition-none ${
 				scrolled
 					? 'bg-slate-950/80 backdrop-blur-lg border-b border-slate-800'
 					: 'bg-slate-950/20 backdrop-blur-sm'
