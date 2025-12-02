@@ -77,7 +77,7 @@ const Hero = () => {
 
 								<div className='p-3 sm:p-4 relative h-full'>
 									{/* File tabs */}
-									<div className='flex space-x-1 sm:space-x-2 mb-3 sm:mb-4 overflow-x-auto'>
+									<div className='flex space-x-1 sm:space-x-2 overflow-x-auto'>
 										<ButtonToFile
 											activeTab={activeTab}
 											onClick={() => setActiveTab('App.jsx')}
@@ -106,7 +106,8 @@ const Hero = () => {
 											customStyle={{
 												margin: 0,
 												borderRadius: '8px',
-												fontSize: '11px',
+												borderTopLeftRadius: '0px',
+												fontSize: '12px',
 												lineHeight: '1.4',
 												height: '100%',
 												border: '1px solid #3c3c3c',
