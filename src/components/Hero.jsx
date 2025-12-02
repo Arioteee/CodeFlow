@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ArrowRight, ChevronDown, Play, Sparkles } from 'lucide-react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs'
