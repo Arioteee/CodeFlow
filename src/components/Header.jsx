@@ -1,5 +1,7 @@
-import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
+
+import { MenuLink } from './links/Links'
 
 const Header = ({ scrolled }) => {
 	const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
@@ -27,15 +29,9 @@ const Header = ({ scrolled }) => {
 
 					{/* Nav Links */}
 					<ul className='hidden md:flex items-center space-x-6 lg:space-x-8'>
-						<li className='text-gray-300 hover:text-white text-sm lg:text-base'>
-							<a href='#features'>Features</a>
-						</li>
-						<li className='text-gray-300 hover:text-white text-sm lg:text-base'>
-							<a href='#pricing'>Pricing</a>
-						</li>
-						<li className='text-gray-300 hover:text-white text-sm lg:text-base'>
-							<a href='#testimonials'>Testimonials</a>
-						</li>
+						<MenuLink AnchorID={'#features'}>Features</MenuLink>
+						<MenuLink AnchorID={'#pricing'}>Pricing</MenuLink>
+						<MenuLink AnchorID={'#testimonials'}>Testimonials</MenuLink>
 					</ul>
 
 					<button
@@ -54,24 +50,18 @@ const Header = ({ scrolled }) => {
 			{mobileMenuIsOpen && (
 				<nav className='md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 animate-in slide-in-from-top duration-300'>
 					<ul className='px-4 py-4 sm:py-6 space-y-3 sm:space-y-4'>
-						<li
-							className='text-gray-300 hover:text-white text-sm lg:text-base'
+						<MenuLink AnchorID={'#features'} onClick={() => setMobileMenuIsOpen(false)}>
+							Features
+						</MenuLink>
+						<MenuLink AnchorID={'#pricing'} onClick={() => setMobileMenuIsOpen(false)}>
+							Pricing
+						</MenuLink>
+						<MenuLink
+							AnchorID={'#testimonials'}
 							onClick={() => setMobileMenuIsOpen(false)}
 						>
-							<a href='#features'>Features</a>
-						</li>
-						<li
-							className='text-gray-300 hover:text-white text-sm lg:text-base'
-							onClick={() => setMobileMenuIsOpen(false)}
-						>
-							<a href='#pricing'>Pricing</a>
-						</li>
-						<li
-							className='text-gray-300 hover:text-white text-sm lg:text-base'
-							onClick={() => setMobileMenuIsOpen(false)}
-						>
-							<a href='#testimonials'>Testimonials</a>
-						</li>
+							Testimonials
+						</MenuLink>
 					</ul>
 				</nav>
 			)}
