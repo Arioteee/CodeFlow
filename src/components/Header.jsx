@@ -5,7 +5,7 @@ const Header = ({ scrolled }) => {
 	const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
 
 	return (
-		<nav
+		<header
 			className={`fixed top-0 w-full z-50 transition-all duration-300 ${
 				scrolled
 					? 'bg-slate-950/80 backdrop-blur-lg border-b border-slate-800'
@@ -13,7 +13,7 @@ const Header = ({ scrolled }) => {
 			}`}
 		>
 			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-				<div className='flex justify-between items-center h-14 sm:h-16 md:h-20'>
+				<nav className='flex justify-between items-center h-14 sm:h-16 md:h-20'>
 					{/* Logotype */}
 					<div className='flex space-x-1 items-center group cursor-pointer'>
 						<div className='w-6 h-6 sm:w-8 sm:h-8'>
@@ -48,11 +48,11 @@ const Header = ({ scrolled }) => {
 							<Menu className='w-5 h-5 sm:w-6 sm:h-6' />
 						)}
 					</button>
-				</div>
+				</nav>
 			</div>
 
 			{mobileMenuIsOpen && (
-				<div className='md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 animate-in slide-in-from-top duration-300'>
+				<nav className='md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 animate-in slide-in-from-top duration-300'>
 					<ul className='px-4 py-4 sm:py-6 space-y-3 sm:space-y-4'>
 						<li
 							className='text-gray-300 hover:text-white text-sm lg:text-base'
@@ -73,9 +73,9 @@ const Header = ({ scrolled }) => {
 							<a href='#testimonials'>Testimonials</a>
 						</li>
 					</ul>
-				</div>
+				</nav>
 			)}
-		</nav>
+		</header>
 	)
 }
 
