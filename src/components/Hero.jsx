@@ -1,15 +1,17 @@
 import { useState } from 'react'
-import { ArrowRight, ChevronDown, Play, Sparkles } from 'lucide-react'
+import { AlertTriangle, ArrowRight, ChevronDown, Play, Sparkles, X } from 'lucide-react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
 import { ButtonToFile } from './buttons/Buttons'
-import { codeExamples } from '../data/CodeExample'
 import { CardForTab } from './cards/Cards'
 import { MacCirclies } from './circlies/Circlies'
 
+import { codeExamples } from '../data/CodeExample'
+
 const Hero = () => {
 	const [activeTab, setActiveTab] = useState('App.jsx')
+	const [toggleDemoButton, setToggleDemoButton] = useState(false)
 
 	return (
 		<section className='relative min-h-screen flex items-center justify-center pt-16 sm:pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden'>
@@ -46,17 +48,50 @@ const Hero = () => {
 							faster.
 						</p>
 
-						<div className='flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-8 sm:mb-12 animate-in slide-in-from-bottom duration-700 delay-300'>
+						<div className='relative flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-8 sm:mb-12 animate-in slide-in-from-bottom duration-700 delay-300'>
 							<button className='group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-b from-blue-600 to-blue-400 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-102 flex items-center justify-center space-x-2'>
 								<span>Start Coding Free</span>
 								<ArrowRight className='w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300' />
 							</button>
-							<button className='group w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-2.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:bg-white/10 flex items-center justify-center space-x-2'>
+							<button
+								onClick={() => setToggleDemoButton(true)}
+								className='group w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-2.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:bg-white/10 flex items-center justify-center space-x-2'
+							>
 								<div className='p-2 bg-white/10 rounded-full group-hover:bg-white/20 duration-300 transition-colors'>
 									<Play className='w-4 h-4 sm:w-5 sm:h-5 fill-white' />
 								</div>
 								<span>Watch Demo</span>
 							</button>
+
+							<div
+								className={`absolute ${
+									toggleDemoButton ? 'block' : 'hidden'
+								} z-100 w-auto md:w-96 lg:w-xl lg:-top-72 lg:left-1/2 bg-gray-900/50 backdrop-blur-xl border border-white/20 rounded-xl p-4 transition-all duration-700`}
+							>
+								<div className='flex flex-col p-4 space-y-6 bg-slate-950 rounded-lg border border-white/20'>
+									<div className='flex w-full items-center justify-between'>
+										<span className='flex items-center gap-2 text-xl text-amber-400'>
+											<AlertTriangle /> Attention
+										</span>
+										<button className='cursor-pointer hover:scale-120 transition-all duration-500'>
+											<X onClick={() => setToggleDemoButton(false)} />
+										</button>
+									</div>
+									<div className='flex flex-col items-center justify-center space-y-4'>
+										<span className='bg-linear-to-b from-blue-400 via-cyan-400 to-blue-400 bg-clip-text'>
+											The link leads to YouTube
+										</span>
+										<a
+											onClick={() => setToggleDemoButton(false)}
+											target='_blank'
+											href='https://youtu.be/xvFZjo5PgG0?si=kZ49dr6A4OPmT4ZF'
+											className='md:text-xl bg-linear-to-b from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent'
+										>
+											Continue
+										</a>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 
