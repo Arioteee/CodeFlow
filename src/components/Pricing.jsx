@@ -21,7 +21,7 @@ const Pricing = () => {
 					</p>
 				</div>
 
-				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-6'>
+				<div className='grid grid-cols-1 justify-self-center md:grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-6'>
 					{plans.map((plan, key) => (
 						<div
 							key={key}
