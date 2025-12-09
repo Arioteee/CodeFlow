@@ -69,16 +69,13 @@ const Hero = () => {
 								} z-100 w-auto md:w-96 lg:w-xl lg:-top-72 lg:left-1/2 bg-gray-900/50 backdrop-blur-xl border border-white/20 rounded-xl p-4 transition-all duration-700`}
 							>
 								<div className='flex flex-col p-4 space-y-6 bg-slate-950 rounded-lg border border-white/20'>
-									<div className='flex w-full items-center justify-between'>
-										<span className='flex items-center gap-2 text-xl text-amber-400'>
-											<AlertTriangle /> Attention
-										</span>
+									<div className='flex w-full items-center justify-end'>
 										<button className='cursor-pointer hover:scale-120 transition-all duration-500'>
 											<X onClick={() => setToggleDemoButton(false)} />
 										</button>
 									</div>
 									<div className='flex flex-col items-center justify-center space-y-4'>
-										<span className='bg-linear-to-b from-blue-400 via-cyan-400 to-blue-400 bg-clip-text'>
+										<span className='bg-linear-to-b from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-xl'>
 											The link leads to YouTube
 										</span>
 										<a
